@@ -1,0 +1,25 @@
+.wrapper {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+@media screen and (min-width: 1001px) {
+  .leftNavMobile {
+    display: none;
+  }
+  .rightNavMobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .leftNav {
+    display: none;
+  }
+  .rightNav {
+    display: none;
+  }
+}

@@ -1,0 +1,31 @@
+.wrapper {
+  text-align: center;
+  border-bottom: 2px solid black;
+  padding-bottom: 2rem;
+}
+
+.wrapper ul {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+}
+
+.wrapper ul li a {
+  font-size: 1.3rem;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.wrapper ul li a:hover {
+  text-decoration: underline;
+  color: rgb(80, 14, 94);
+}
+
+.borders {
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  padding: 0 1rem;
+}

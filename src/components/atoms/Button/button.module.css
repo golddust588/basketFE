@@ -1,0 +1,16 @@
+.button {
+  width: 160px;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.post_button:hover {
+  background-color: aquamarine;
+  transition: 0.2s;
+}
+
+.delete_button:hover {
+  background-color: rgb(255, 127, 138);
+  transition: 0.2s;
+}

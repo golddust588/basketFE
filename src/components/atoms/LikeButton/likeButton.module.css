@@ -1,0 +1,32 @@
+.button {
+  width: 50px;
+  padding: 0.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0.4rem;
+}
+
+.up_button {
+  rotate: 180deg;
+  position: relative;
+}
+
+.small_up {
+  width: 15px;
+  rotate: 180deg;
+  margin-left: 20px;
+}
+
+.small_down {
+  width: 15px;
+}
+
+.up_button:hover {
+  background-color: rgb(192, 252, 232);
+  transition: 0.4s;
+}
+
+.down_button:hover {
+  background-color: rgb(247, 188, 193);
+  transition: 0.4s;
+}

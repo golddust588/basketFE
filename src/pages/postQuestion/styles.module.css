@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.7rem;
+  width: 70%;
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 12rem;
+  max-width: 1000px;
+}
+
+.form input {
+  padding: 0.7rem;
+  width: 70%;
+}
+
+.questionTextarea {
+  height: 10rem;
+  width: 70%;
+  padding: 0.7rem;
+}
