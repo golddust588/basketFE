@@ -4,10 +4,10 @@ const validation = (email: string, password: string) => {
     const passwordPattern = /^(?=.*[0-9])[a-zA-Z0-9]{6,}$/;
 
     if (!emailPattern.test(email)) {
-      alert("Please enter correct email or password");
+      alert("Neteisingas el. paštas arba slaptažodis");
       return false;
     } else if (!passwordPattern.test(password)) {
-      alert("Please enter correct email or password");
+      alert("Neteisingas el. paštas arba slaptažodis");
       return false;
     } else {
       return true;

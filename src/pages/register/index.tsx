@@ -32,7 +32,7 @@ const Register = () => {
           cookie.set("jwt_token", response.data.jwt_token);
           cookie.set("name", response.data.name);
           cookie.set("user_id", response.data.user_id);
-          alert("Registration successful");
+          alert("Registracija sėkminga!");
           router.push("/");
         }
 
@@ -48,22 +48,22 @@ const Register = () => {
       <PageTemplate>
         <div className={styles.form}>
           <input
-            placeholder="Email"
+            placeholder="El. paštas"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            placeholder="Password"
+            placeholder="Slaptažodis"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
           />
           <input
-            placeholder="Name"
+            placeholder="Vardas (slapyvardis)"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <Button text="Register" onClick={onRegister} type="POST" />
+          <Button text="Registruotis" onClick={onRegister} type="POST" />
         </div>
       </PageTemplate>
     </div>

@@ -18,16 +18,16 @@ const NavBar: React.FC<NavBarType> = ({
       <ul>
         <li>
           <Link href="/" onClick={onClickedAllQuestions}>
-            All questions
+            Visos temos
           </Link>
         </li>
         <li>
           <a className={styles.borders} onClick={onClickedAnswered}>
-            Answered
+            Temos su komentarais
           </a>
         </li>
         <li>
-          <a onClick={onClickedMostLiked}>Most popular</a>
+          <a onClick={onClickedMostLiked}>Populiariausios</a>
         </li>
       </ul>
     </div>

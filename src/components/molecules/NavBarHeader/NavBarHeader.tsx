@@ -26,12 +26,17 @@ const NavBar: React.FC<NavBarType> = ({
         <>
           <ul>
             <li>
-              <Link href="/myQuestions">My questions</Link>
+              <Link href="/postArticle">Įkelti naują titulinio nuorodą</Link>
             </li>
           </ul>
           <ul>
             <li>
-              <Link href="/postQuestion">Post a new question</Link>
+              <Link href="/myQuestions">Mano temos</Link>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <Link href="/postQuestion">Įkelti naują temą</Link>
             </li>
           </ul>
           <ul>
@@ -40,7 +45,7 @@ const NavBar: React.FC<NavBarType> = ({
           <ul>
             <li>
               <Link href="/login" onClick={onLogout}>
-                Logout
+                Atsijungti
               </Link>
             </li>
           </ul>
@@ -48,7 +53,7 @@ const NavBar: React.FC<NavBarType> = ({
       ) : (
         <ul>
           <li>
-            <Link href="/login">Login</Link>
+            <Link href="/login">Prisijungti</Link>
           </li>
         </ul>
       )}
@@ -85,12 +90,12 @@ const NavBarMobile: React.FC<NavBarMobileType> = ({
           <>
             <ul>
               <li>
-                <Link href="/myQuestions">My questions</Link>
+                <Link href="/myQuestions">Mano temos</Link>
               </li>
             </ul>
             <ul>
               <li>
-                <Link href="/postQuestion">Post a new question</Link>
+                <Link href="/postQuestion">Įkelti naują temą</Link>
               </li>
             </ul>
             <ul>
@@ -99,7 +104,7 @@ const NavBarMobile: React.FC<NavBarMobileType> = ({
             <ul>
               <li>
                 <Link href="/login" onClick={onLogout}>
-                  Logout
+                  Atsijungti
                 </Link>
               </li>
             </ul>
@@ -107,7 +112,7 @@ const NavBarMobile: React.FC<NavBarMobileType> = ({
         ) : (
           <ul>
             <li>
-              <Link href="/login">Login</Link>
+              <Link href="/login">Prisijungti</Link>
             </li>
           </ul>
         )}

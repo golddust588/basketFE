@@ -4,4 +4,11 @@
   padding-bottom: 2rem;
   text-align: center;
   color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer Link {
+  text-decoration: none;
 }

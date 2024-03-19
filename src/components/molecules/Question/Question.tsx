@@ -25,9 +25,7 @@ const Question: React.FC<QuestionType> = ({
   onDeleteQuestion,
 }) => {
   const onItemClicked = () => {
-    const isConfirmed = window.confirm(
-      "Are you sure you want to delete this question?"
-    );
+    const isConfirmed = window.confirm("Ar tikrai norite ištrinti temą?");
 
     if (isConfirmed) {
       onDeleteQuestion && onDeleteQuestion(_id);
@@ -46,15 +44,15 @@ const Question: React.FC<QuestionType> = ({
               gained_likes_number < 0 ? styles.negativeLikes : styles.likes
             }
           >
-            {`Likes: ${gained_likes_number}`}
+            {`Patinka: ${gained_likes_number}`}
           </h4>
-          <h4>{`Answers: ${answers.length}`}</h4>
+          <h4>{`Komentarai: ${answers.length}`}</h4>
         </div>
         <div className={styles.wrapper4}>
           <h2 id="truncatedText">{question_title}</h2>
           <p>{question_text}</p>
           {router.pathname === "/myQuestions" && (
-            <Button text="Delete" onClick={onItemClicked} type="DELETE" />
+            <Button text="Ištrinti" onClick={onItemClicked} type="DELETE" />
           )}
         </div>
       </Link>

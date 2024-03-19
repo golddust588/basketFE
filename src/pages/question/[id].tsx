@@ -117,7 +117,7 @@ const Question = () => {
     );
 
     if (response.status === 200) {
-      alert("Answer deleted!");
+      alert("Atsakymas ištrintas!");
       router.reload();
     }
 
@@ -222,21 +222,21 @@ const Question = () => {
                 className={
                   upvotes && upvotes < 0 ? styles.negativeLikes : styles.likes
                 }
-              >{`Upvotes: ${upvotes}`}</div>
+              >{`Patinka: ${upvotes}`}</div>
             </div>
 
             <h2>{`${question.question_title}`}</h2>
             <h4>{`${question.question_text}`}</h4>
-            <h5>{`Date: ${question.date}`}</h5>
+            <h5>{`Data: ${question.date}`}</h5>
 
-            <h3>Answers:</h3>
+            <h3>Komentarai:</h3>
             {answers.map((answer) => {
               return (
                 <div className={styles.answerWrapper} key={answer._id}>
                   <h4>{answer.answer_text}</h4>
                   <h5>{answer.date}</h5>
                   <h5 className={styles.answerUpvotes}>
-                    {`Upvotes: ${answerUpvotes[answer._id] || 0}`}
+                    {`Patinka: ${answerUpvotes[answer._id] || 0}`}
                     {/* {`Upvotes: ${answerUpvotes}`} */}
                     <LikeButton
                       type="SMALL-UP"
@@ -250,7 +250,7 @@ const Question = () => {
 
                   {cookie.get("user_id") === answer.user_id && (
                     <Button
-                      text="Delete your answer"
+                      text="Ištrinti komentarą"
                       type="DELETE"
                       onClick={() => onDeleteAnswer(answer._id)}
                     />
@@ -259,20 +259,24 @@ const Question = () => {
               );
             })}
 
-            <h3>Create your answer:</h3>
+            <h3>Rašyti komentarą:</h3>
             {headers.authorization ? (
               <div>
                 <textarea
                   className={styles.answerTextarea}
-                  placeholder="Answer text:"
+                  placeholder="Tekstas:"
                   value={answer_text}
                   onChange={(e) => setAnswerText(e.target.value)}
                 />
-                <Button type="POST" text="Answer" onClick={insertAnswer} />
+                <Button
+                  type="POST"
+                  text="Įkelti komentarą"
+                  onClick={insertAnswer}
+                />
               </div>
             ) : (
               <div>
-                <span>Must be logged in to answer questions</span>
+                <span>Norėdami komentuoti prisijunkite</span>
               </div>
             )}
           </div>

@@ -46,19 +46,19 @@ const Login = () => {
       <PageTemplate>
         <div className={styles.form}>
           <input
-            placeholder="email"
+            placeholder="El. paštas"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
-            placeholder="password"
+            placeholder="Slaptažodis"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
           />
-          <Button text="Login" onClick={onLogin} type="POST" />
+          <Button text="Prisijungti" onClick={onLogin} type="POST" />
           <Link className={styles.link} href="/register">
-            New user? Click here to register!
+            Naujas vartotojas? Užsiregistruok!
           </Link>
         </div>
       </PageTemplate>

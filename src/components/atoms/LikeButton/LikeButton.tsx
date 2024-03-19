@@ -10,6 +10,7 @@ const LikeButton: React.FC<ButtonType> = ({ onClick, type }) => {
   return (
     <img
       src="https://metro.co.uk/wp-content/uploads/2014/12/downvote.png"
+      alt="Upvote"
       onClick={onClick}
       className={`
       ${styles.button} 

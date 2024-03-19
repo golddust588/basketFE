@@ -53,17 +53,17 @@ const QuestionForm = () => {
       <PageTemplate>
         <div className={styles.form}>
           <input
-            placeholder="Question title:"
+            placeholder="Temos pavadinimas:"
             value={question_title}
             onChange={(e) => setQuestionTitle(e.target.value)}
           />
           <textarea
             className={styles.questionTextarea}
-            placeholder="Question text:"
+            placeholder="Tekstas:"
             value={question_text}
             onChange={(e) => setQuestionText(e.target.value)}
           />
-          <Button text="Post" onClick={insertQuestion} type="POST" />
+          <Button text="Įkelti" onClick={insertQuestion} type="POST" />
         </div>
       </PageTemplate>
     </div>

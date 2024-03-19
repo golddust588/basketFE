@@ -28,7 +28,7 @@ const Header = () => {
 
   const savedName: string | undefined = cookie.get("name");
 
-  const greeting: string = `Hello, ${savedName ?? "Guest"}!`;
+  const greeting: string = `Sveiki, ${savedName ?? "Svečias"}!`;
 
   return (
     <header className={styles.wrapper}>

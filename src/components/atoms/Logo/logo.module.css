@@ -4,8 +4,17 @@
   margin-top: 6px;
 }
 
-.logo {
-  text-decoration: none;
-  color: rgb(80, 14, 94);
+.wrapper h5 {
   padding-left: 3rem;
+}
+
+.logo {
+  /* padding-left: 3rem; */
+  width: 100px;
+}
+
+.image {
+  width: 500px;
+  object-fit: cover;
+  height: 160px;
 }

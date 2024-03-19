@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import styles from "./questions.module.css";
 import Question from "../../molecules/Question/Question";
+import Spinner from "@/components/atoms/Spinner/Spinner";
 
 type QuestionsType = {
   questions: Array<any> | null;
@@ -14,7 +15,10 @@ const Questions: React.FC<QuestionsType> = ({
 }) => {
   return (
     <div className={styles.wrapper}>
-      {questions &&
+      {questions === null ? (
+        <Spinner />
+      ) : (
+        questions &&
         questions.map((question) => {
           return (
             <div key={question._id}>
@@ -30,7 +34,8 @@ const Questions: React.FC<QuestionsType> = ({
               />
             </div>
           );
-        })}
+        })
+      )}
     </div>
   );
 };

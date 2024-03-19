@@ -5,6 +5,7 @@ import cookie from "js-cookie";
 import { useRouter } from "next/router";
 import axios from "axios";
 import Questions from "@/components/organisms/Questions/Questions";
+import Spinner from "@/components/atoms/Spinner/Spinner";
 
 const Main = () => {
   const [questions, setQuestions] = useState<Array<any> | null>(null);
@@ -59,17 +60,23 @@ const Main = () => {
     fetchData();
   }, []);
 
+  {
+    console.log("questions", questions);
+  }
+
   return (
     <>
       <PageTemplate>
         <div>
-          {questions && questions.length > 0 ? (
+          {questions === null ? (
+            <Spinner />
+          ) : questions && questions.length > 0 ? (
             <Questions
               questions={questions}
               onDeleteQuestion={onDeleteQuestion}
             />
           ) : (
-            <h2 className={`${styles.text}`}>No questions yet</h2>
+            <h2 className={`${styles.text}`}>Temų nėra</h2>
           )}
         </div>
       </PageTemplate>

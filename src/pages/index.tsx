@@ -1,7 +1,6 @@
 import styles from "./index.module.css";
 import { useEffect, useState } from "react";
 import PageTemplate from "@/components/organisms/PageTemplate/PageTemplate";
-
 import axios from "axios";
 import Questions from "@/components/organisms/Questions/Questions";
 import NavBar from "../components/molecules/NavBarMainPageFilter/NavBar";
