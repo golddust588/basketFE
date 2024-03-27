@@ -40,6 +40,11 @@ const NavBar: React.FC<NavBarType> = ({
             </li>
           </ul>
           <ul>
+            <li>
+              <Link href="/forum">Forumas</Link>
+            </li>
+          </ul>
+          <ul>
             <li className={styles.name}>{greeting}</li>
           </ul>
           <ul>

@@ -38,7 +38,7 @@ const QuestionForm = () => {
         if (response.status === 201) {
           setQuestionTitle("");
           setQuestionText("");
-          router.push("/");
+          router.push("/forum");
         }
         console.log("response", response);
       } catch (error) {

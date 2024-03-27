@@ -1,6 +1,6 @@
 const validation = (question_title: string, question_text?: string) => {
   try {
-    const titlePattern = /^.{10,200}$/;
+    const titlePattern = /^.{0,200}$/;
     const textPattern = /^.{10,1000}$/;
 
     if (!titlePattern.test(question_title)) {
