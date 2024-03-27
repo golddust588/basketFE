@@ -4,28 +4,33 @@ import PageTemplate from "@/components/organisms/PageTemplate/PageTemplate";
 import axios from "axios";
 import Questions from "@/components/organisms/Questions/Questions";
 import NavBar from "../components/molecules/NavBarMainPageFilter/NavBar";
+import Articles from "@/components/organisms/Articles/Articles";
 
-type QuestionType = {
+type ArticleType = {
   _id: string;
-  question_title: string;
-  question_text: string;
+  article_title: string;
+  article_text?: string;
+  imageName: string;
+  imageUrl: string;
+  caption: string;
   date: string;
+  question_id: string;
+  comments: number;
   gained_likes_number: number;
   user_id: string;
-  answers: [];
-  onDeleteQuestion?: (id: string) => void;
+  onDeleteArticle?: (id: string) => void;
 };
 
 const Main = () => {
-  const [questions, setQuestions] = useState<Array<any> | null>(null);
-  const [originalQuestions, setOriginalQuestions] =
-    useState<Array<QuestionType> | null>(null);
+  const [articles, setArticles] = useState<Array<any> | null>(null);
+  const [originalArticles, setOriginalArticles] =
+    useState<Array<ArticleType> | null>(null);
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`${process.env.SERVER_URL}/questions`);
-      setQuestions(response.data.questions);
-      setOriginalQuestions(response.data.questions);
+      const response = await axios.get(`${process.env.SERVER_URL}/articles`);
+      setArticles(response.data.articles);
+      setOriginalArticles(response.data.articles);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -35,25 +40,23 @@ const Main = () => {
     fetchData();
   }, []);
 
-  const onClickedAllQuestions = () => {
-    setQuestions(originalQuestions);
+  const onClickedAllArticles = () => {
+    setArticles(originalArticles);
   };
 
   const onClickedAnswered = () => {
     // @ts-ignore
-    const filteredQuestions = questions.filter(
-      (question) => question.answers.length > 0
-    );
-    setQuestions(filteredQuestions);
+    const filteredArticles = articles.filter((article) => article.comments > 0);
+    setArticles(filteredArticles);
   };
 
   const onClickedMostLiked = () => {
-    if (originalQuestions) {
-      const sortedQuestions = [...originalQuestions].sort(
+    if (originalArticles) {
+      const sortedArticles = [...originalArticles].sort(
         (a, b) => b.gained_likes_number - a.gained_likes_number
       );
 
-      setQuestions(sortedQuestions);
+      setArticles(sortedArticles);
     }
   };
 
@@ -61,11 +64,11 @@ const Main = () => {
     <>
       <PageTemplate>
         <NavBar
-          onClickedAllQuestions={onClickedAllQuestions}
+          onClickedAllQuestions={onClickedAllArticles}
           onClickedAnswered={onClickedAnswered}
           onClickedMostLiked={onClickedMostLiked}
         />
-        <Questions questions={questions} />
+        <Articles articles={articles} />
       </PageTemplate>
     </>
   );

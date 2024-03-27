@@ -1,0 +1,24 @@
+.wrapper {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+  /* .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  } */
+}
+
+@media screen and (max-width: 750px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
