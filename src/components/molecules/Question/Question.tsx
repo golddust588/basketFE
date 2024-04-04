@@ -12,6 +12,7 @@ type QuestionType = {
   gained_likes_number: number;
   user_id: string;
   answers: [];
+  userName: string;
   onDeleteQuestion?: (id: string) => void;
 };
 
@@ -22,6 +23,7 @@ const Question: React.FC<QuestionType> = ({
   date,
   gained_likes_number,
   answers,
+  userName,
   onDeleteQuestion,
 }) => {
   const onItemClicked = () => {
@@ -38,6 +40,7 @@ const Question: React.FC<QuestionType> = ({
     <div className={styles.wrapper}>
       <Link href={`/question/${_id}`} className={styles.wrapper2}>
         <div className={styles.wrapper3}>
+          <h4 className={styles.italicText}>{`${userName}:`}</h4>
           <h4>{date}</h4>
           <h4
             className={

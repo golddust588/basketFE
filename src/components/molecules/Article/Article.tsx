@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/atoms/Button/Button";
 import styles from "./article.module.css";
@@ -47,25 +48,29 @@ const Article: React.FC<ArticleType> = ({
   return (
     <div className={styles.wrapper}>
       <Link href={`/question/${question_id}`} className={styles.wrapper2}>
-        <div className={styles.wrapper4}>
-          <img src={imageUrl} alt="Nuorodos paveikslelis" />
-          <h2 id="truncatedText">{article_title}</h2>
-          <span className={styles.wrapper3}>
-            <p>{date}</p>
-            <p
-              className={
-                gained_likes_number < 0 ? styles.negativeLikes : styles.likes
-              }
-            >
-              {`Patinka: ${gained_likes_number}`}
-            </p>
-            <p>{`Komentarai: ${comments}`}</p>
-          </span>
-          {/* <p>{question_text}</p> */}
-          {/* {router.pathname === "/myQuestions" && (
+        <Image
+          src={imageUrl}
+          alt="Nuorodos paveikslelis"
+          className={styles.image}
+          width={700}
+          height={500}
+        />
+        <h2 id="truncatedText">{article_title}</h2>
+        <span className={styles.wrapper3}>
+          <p>{date}</p>
+          <p
+            className={
+              gained_likes_number < 0 ? styles.negativeLikes : styles.likes
+            }
+          >
+            {`Patinka: ${gained_likes_number}`}
+          </p>
+          <p>{`Komentarai: ${comments}`}</p>
+        </span>
+        {/* <p>{question_text}</p> */}
+        {/* {router.pathname === "/myQuestions" && (
             <Button text="Ištrinti" onClick={onItemClicked} type="DELETE" />
           )} */}
-        </div>
       </Link>
     </div>
   );

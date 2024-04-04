@@ -31,6 +31,7 @@ const Questions: React.FC<QuestionsType> = ({
                 user_id={question.user_id}
                 answers={question.answers}
                 onDeleteQuestion={onDeleteQuestion}
+                userName={question.userName}
               />
             </div>
           );

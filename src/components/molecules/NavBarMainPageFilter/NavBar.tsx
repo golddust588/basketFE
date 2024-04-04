@@ -17,7 +17,7 @@ const NavBar: React.FC<NavBarType> = ({
     <div className={styles.wrapper}>
       <ul>
         <li>
-          <Link href="/" onClick={onClickedAllQuestions}>
+          <Link href="/forum" onClick={onClickedAllQuestions}>
             Visos temos
           </Link>
         </li>

@@ -1,11 +1,11 @@
 .wrapper {
   height: 150px;
   border: 1px rgb(216, 208, 208) solid;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  text-decoration: none;
-  width: 100%;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* gap: 1rem; */
+  /* text-decoration: none; */
+  /* width: 100%; */
 }
 
 .wrapper2 {
@@ -19,11 +19,20 @@
 
 .wrapper3 {
   border: 1px rgb(216, 208, 208) solid;
-  height: 150px;
+  /* height: 150px; */
   width: 150px;
   min-width: 150px;
   padding-left: 1rem;
   padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.wrapper3 h4 {
+  font-weight: 400;
+  margin: 0;
 }
 
 .wrapper4 {
@@ -49,6 +58,10 @@
 
 .negativeLikes {
   color: brown;
+}
+
+.italicText {
+  font-style: italic;
 }
 
 .likes {

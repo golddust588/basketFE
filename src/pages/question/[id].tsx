@@ -16,6 +16,7 @@ type QuestionType = {
   gained_likes_number: number;
   user_id: string;
   answers: Array<any> | null;
+  userName: string;
 };
 
 type AnswerType = {
@@ -25,6 +26,7 @@ type AnswerType = {
   gained_likes_number: number;
   question_id: string;
   user_id: string;
+  userName: string;
 };
 
 const Question = () => {
@@ -228,13 +230,16 @@ const Question = () => {
             <h2>{`${question.question_title}`}</h2>
             <h4>{`${question.question_text}`}</h4>
             <h5>{`Data: ${question.date}`}</h5>
+            <h5>{`Parašė: ${question.userName}`}</h5>
 
             <h3>Komentarai:</h3>
             {answers.map((answer) => {
               return (
                 <div className={styles.answerWrapper} key={answer._id}>
+                  <h5>{`${answer.userName}:`}</h5>
                   <h4>{answer.answer_text}</h4>
                   <h5>{answer.date}</h5>
+
                   <h5 className={styles.answerUpvotes}>
                     {`Patinka: ${answerUpvotes[answer._id] || 0}`}
                     {/* {`Upvotes: ${answerUpvotes}`} */}
