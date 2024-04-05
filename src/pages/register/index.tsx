@@ -32,8 +32,10 @@ const Register = () => {
           cookie.set("jwt_token", response.data.jwt_token);
           cookie.set("name", response.data.name);
           cookie.set("user_id", response.data.user_id);
-          alert("Registracija sėkminga!");
-          router.push("/");
+          alert(
+            "Registracija sėkminga, patvirtinkite el. paštą paspaudę ant nuorodos gautame laiške!"
+          );
+          // router.push("/VerifyEmail");
         }
 
         console.log("response", response);
