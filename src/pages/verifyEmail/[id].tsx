@@ -35,11 +35,9 @@ const VerifyEmail = () => {
 
   useEffect(() => {
     if (router.query.id) {
-      // console.log("efektoId", router.query.id);
-
       verifyUser();
     }
-  }, [router.query.id]); // Run this effect whenever router.query.id changes
+  }, [router.query.id]);
 
   return <PageTemplate>{isLoading ? <Spinner /> : <></>}</PageTemplate>;
 };

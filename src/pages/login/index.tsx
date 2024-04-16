@@ -36,7 +36,14 @@ const Login = () => {
         console.log("response", response);
       } catch (error) {
         console.error("Error:", error);
-        alert("Please enter correct email or password");
+        // @ts-ignore
+        if (error.response.data.message === "Email not verified") {
+          alert(
+            "El. paštas nepatvirtintas, paspauskite ant patvirtinimo nuorodos gautame laiške."
+          );
+        } else {
+          alert("Please enter correct email or password");
+        }
       }
     }
   };

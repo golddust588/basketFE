@@ -35,13 +35,17 @@ const Register = () => {
           alert(
             "Registracija pradėta, patvirtinkite el. paštą paspaudę ant nuorodos gautame laiške!"
           );
-          // router.push("/VerifyEmail");
+          // Clear input fields after showing the alert
+          setEmail("");
+          setPassword("");
+          setName("");
         }
 
         console.log("response", response);
       }
     } catch (error) {
       console.error("Error during registration:", error);
+      alert(error.response.data.status);
     }
   };
 
