@@ -8,15 +8,39 @@ import {
   NavBar,
   NavBarMobile,
 } from "../../molecules/NavBarHeader/NavBarHeader";
+import axios from "axios";
 
 const Header = () => {
   const [isUserLoggedIn, setUserLoggedIn] = useState(false);
+
+  const fetchIsUserLoggedIn = async (headers: object) => {
+    try {
+      const response = await axios.get(
+        `${process.env.SERVER_URL}/users/is-user-logged-in`,
+
+        {
+          headers,
+        }
+      );
+      console.log(response);
+      // Assuming your backend returns a boolean value indicating if the user is logged in
+      const loggedIn = response.data.message;
+      setUserLoggedIn(loggedIn);
+    } catch (error) {
+      console.error("Error:", error);
+      // error ? false : true;
+    }
+  };
 
   useEffect(() => {
     const savedCookie = cookie.get("jwt_token"); //reiktu padaryti, kad gauti is backendo pagal jwt token...
 
     if (savedCookie) {
-      setUserLoggedIn(true);
+      const headers = {
+        authorization: savedCookie,
+      };
+
+      fetchIsUserLoggedIn(headers);
     }
   }, []);
 
