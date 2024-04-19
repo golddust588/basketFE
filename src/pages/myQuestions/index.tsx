@@ -44,12 +44,12 @@ const Main = () => {
     );
 
     if (response.status === 200) {
-      setQuestions((prevQuestions) => {
-        return (
-          prevQuestions &&
-          prevQuestions.filter((question) => question._id !== _id)
-        );
-      });
+      // setQuestions((prevQuestions) => {
+      //   return (
+      //     prevQuestions &&
+      //     prevQuestions.filter((question) => question._id !== _id)
+      //   );
+      // });
       router.push("/myQuestions");
     }
 

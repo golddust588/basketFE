@@ -28,6 +28,8 @@ const Register = () => {
           body
         );
 
+        console.log("response", response);
+
         if (response.status === 201) {
           // cookie.set("jwt_token", response.data.jwt_token);
           cookie.set("name", response.data.name);
@@ -45,7 +47,14 @@ const Register = () => {
       }
     } catch (error) {
       console.error("Error during registration:", error);
-      alert(error.response.data.status);
+      if (error.response.data.message === "Email already exists") {
+        alert("El. paštas jau priregistruotas!");
+      }
+
+      if (error.response.data.message === "Name already exists") {
+        alert("Toks vartotojo vardas jau priregistruotas!");
+      }
+      // alert(error.response.data.message);
     }
   };
 

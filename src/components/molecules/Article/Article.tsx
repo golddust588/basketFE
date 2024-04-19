@@ -66,6 +66,7 @@ const Article: React.FC<ArticleType> = ({
             {`Patinka: ${gained_likes_number}`}
           </p>
           <p>{`Komentarai: ${comments}`}</p>
+          <Button text="Ištrinti" onClick={onItemClicked} type="DELETE" />
         </span>
         {/* <p>{question_text}</p> */}
         {/* {router.pathname === "/myQuestions" && (

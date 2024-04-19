@@ -3,6 +3,8 @@ import PageTemplate from "@/components/organisms/PageTemplate/PageTemplate";
 import axios from "axios";
 import Questions from "@/components/organisms/Questions/Questions";
 import NavBar from "../../components/molecules/NavBarMainPageFilter/NavBar";
+import cookie from "js-cookie";
+import { useRouter } from "next/router";
 
 type QuestionType = {
   _id: string;
@@ -19,6 +21,8 @@ const Main = () => {
   const [questions, setQuestions] = useState<Array<any> | null>(null);
   const [originalQuestions, setOriginalQuestions] =
     useState<Array<QuestionType> | null>(null);
+
+  const router = useRouter();
 
   const fetchData = async () => {
     try {
@@ -56,6 +60,31 @@ const Main = () => {
     }
   };
 
+  const onDeleteQuestion = async (_id: string) => {
+    const headers = {
+      authorization: cookie.get("jwt_token"),
+    };
+
+    const response = await axios.delete(
+      `${process.env.SERVER_URL}/question/${_id}`,
+      {
+        headers,
+      }
+    );
+
+    if (response.status === 200) {
+      // setQuestions((prevQuestions) => {
+      //   return (
+      //     prevQuestions &&
+      //     prevQuestions.filter((question) => question._id !== _id)
+      //   );
+      // });
+      router.push("/forum");
+    }
+
+    console.log(response);
+  };
+
   return (
     <>
       <PageTemplate>
@@ -64,7 +93,7 @@ const Main = () => {
           onClickedAnswered={onClickedAnswered}
           onClickedMostLiked={onClickedMostLiked}
         />
-        <Questions questions={questions} />
+        <Questions questions={questions} onDeleteQuestion={onDeleteQuestion} />
       </PageTemplate>
     </>
   );
